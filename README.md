@@ -25,7 +25,12 @@ O objetivo deste harness é desacoplar totalmente a **governança da IA de exper
 │   └── logs/
 │       ├── mapping/           # Mapeamento de shapes de tensores e matrizes de confusão
 │       └── archive/           # Histórico de perda (loss), métricas e falhas de treinamento
-├── tests/                     # Testes dos utilitários do harness (pytest)
+├── .agent-harness/hooks/      # stop_gate.py (bloqueia saída com falhas) e audit_log.py (auditoria)
+├── .claude/settings.json      # Liga os hooks no Claude Code
+├── .github/workflows/ci.yml   # CI: ruff + pytest a cada push
+├── src/                       # Esqueleto: data, features, model, train, evaluate
+├── tests/                     # Testes do harness e do esqueleto (pytest)
+├── docs/MANUAL.md             # Manual completo de uso
 ├── CLAUDE.md / AGENTS.md      # Ponteiros que fazem Claude Code / Cursor / Copilot carregarem o AGENTS_CORE.md
 ├── .agentconfig.json          # Metadados do modelo atual e comandos de execução do pipeline
 ├── .env.example               # Modelo de chaves de provedores e conexões de storage (S3/HuggingFace)

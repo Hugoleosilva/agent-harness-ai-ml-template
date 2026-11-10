@@ -1,0 +1,18 @@
+[project]
+name = "ai-model-factory"
+version = "0.2.0"
+description = "Governance harness template for AI/ML projects built with coding agents"
+requires-python = ">=3.10"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+dev = ["ruff", "pytest"]
+torch = ["torch"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = [".agent-harness/templates"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -71,3 +71,6 @@ Thumbs.db
 
 # Keep harness skeleton folders
 !.agent-harness/logs/**/.gitkeep
+
+# Agent audit trail (local)
+.agent-harness/logs/audit.jsonl
