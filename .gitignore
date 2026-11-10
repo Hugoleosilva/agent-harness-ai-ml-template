@@ -1,0 +1,73 @@
+# API Keys & Local Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials*.json
+.aws/
+
+# Agent Harness Local Runtime
+.agent-harness/mcp/secrets.json
+.agent-harness/logs/local-debug.log
+
+# Datasets (never commit raw/processed data)
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.jsonl
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.arrow
+*.sqlite
+*.db
+
+# Model weights & checkpoints
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.bin
+*.joblib
+*.pb
+*.tflite
+
+# Experiment tracking & caches
+mlruns/
+wandb/
+lightning_logs/
+runs/
+tensorboard/
+.cache/
+.dvc/cache
+catboost_info/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Keep harness skeleton folders
+!.agent-harness/logs/**/.gitkeep

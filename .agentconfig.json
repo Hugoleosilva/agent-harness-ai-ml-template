@@ -1,0 +1,35 @@
+{
+  "development_type": "machine_learning_or_ai_model",
+  "task": "TBD (filled by Setup Wizard: classification | regression | forecasting | nlp | vision | ...)",
+  "stack": ["Python", "PyTorch", "Scikit-Learn", "Hugging Face"],
+  "reproducibility": {
+    "seed": 42,
+    "deterministic": true,
+    "seed_helper": ".agent-harness/templates/seed_everything.py"
+  },
+  "data": {
+    "raw_dir": "data/raw",
+    "processed_dir": "data/processed",
+    "split_policy": "TBD (random | stratified | group | time)",
+    "split_indices_path": "data/splits.json",
+    "test_set_policy": "evaluate once, at the end"
+  },
+  "metrics": {
+    "primary": "TBD",
+    "baseline": "TBD (record the baseline value here)",
+    "early_stopping_monitor": "val_loss"
+  },
+  "hardware": {
+    "device": "auto",
+    "vram_gb": null,
+    "mixed_precision": true
+  },
+  "validation_commands": {
+    "lint": "ruff check .",
+    "format": "ruff format --check .",
+    "leakage_check": "python .agent-harness/templates/check_leakage.py data/splits.json",
+    "tensor_check": "python -c \"import torch; print('cuda:', torch.cuda.is_available())\"",
+    "test": "pytest tests/ -q"
+  },
+  "specific_constraints": "Enforce global seeds. Early stopping on validation metrics only. Test set is never used for tuning."
+}

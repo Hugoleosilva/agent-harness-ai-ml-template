@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "local-filesystem-server": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    }
+  },
+  "_notes": [
+    "Add servers only when needed (each one costs context tokens).",
+    "Optional: GitHub server (needs MCP_GITHUB_TOKEN), a SQL/DuckDB inspector for tabular data, a hardware/GPU monitor.",
+    "Secrets are read from the environment (.env); never write them in this file."
+  ]
+}
